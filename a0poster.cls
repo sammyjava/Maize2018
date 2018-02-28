@@ -196,11 +196,11 @@
 \renewcommand{\tiny}{\fontsize{12}{14}\selectfont}
 \renewcommand{\scriptsize}{\fontsize{14}{18}\selectfont}   
 \renewcommand{\footnotesize}{\fontsize{18}{22}\selectfont}
-\renewcommand{\small}{\fontsize{20}{24}\selectfont}
-\renewcommand{\normalsize}{\fontsize{28}{36}\selectfont} % was 24 30
+\renewcommand{\small}{\fontsize{24.88}{30}\selectfont}
+\renewcommand{\normalsize}{\fontsize{30}{36}\selectfont} % was 24 30
 \renewcommand{\large}{\fontsize{32}{38}\selectfont}
-\renewcommand{\Large}{\fontsize{36}{45}\selectfont}
-\renewcommand{\LARGE}{\fontsize{43}{54}\selectfont}
+\renewcommand{\Large}{\fontsize{38}{45}\selectfont}
+\renewcommand{\LARGE}{\fontsize{44}{54}\selectfont}
 \renewcommand{\huge}{\fontsize{52}{64}\selectfont}
 \renewcommand{\Huge}{\fontsize{62}{77}\selectfont}
 \newcommand{\veryHuge}{\fontsize{74}{93}\selectfont}
@@ -213,7 +213,7 @@
 
 \setlength\abovecaptionskip{25pt}
 \setlength\belowcaptionskip{0pt}
-\setlength\abovedisplayskip{25pt plus 6pt minus 15 pt}
+\setlength\abovedisplayskip{25pt plus 6pt minus 15pt}
 \setlength\abovedisplayshortskip{0pt plus 6pt}
 \setlength\belowdisplayshortskip{13pt plus 7pt minus 6pt}
 \setlength\belowdisplayskip\abovedisplayskip

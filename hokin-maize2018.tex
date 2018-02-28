@@ -78,7 +78,8 @@
 %          minus 2pt means that TeX can shrink it by at most 2pt
 \usepackage{titlesec}
 
-\titlespacing{\section}{0pt}{24pt}{12pt}
+% {left}{before}{after}
+\titlespacing{\section}{0pt}{36pt}{12pt}
 \titlespacing{\subsection}{0pt}{12pt}{12pt}
 \titlespacing{\subsubsection}{0pt}{12pt}{12pt}
 
@@ -93,7 +94,8 @@
 
 % width of figures for consistency
 \newlength{\figwidth}
-\setlength{\figwidth}{240mm}
+\setlength{\figwidth}{236mm}
+
 
 % space above figures
 \newlength{\figtopspace}
@@ -117,18 +119,19 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 % Note: no line breaks between minipage environments!
 
-\textbf{\color{CarnegiePriBlue} \VeryHuge GBS identification of genomic loci associated with embryo twins in \textit{ig1} mutants}    % Title
+\textbf{\color{CarnegiePriBlue} \Huge GBS identification of genomic loci associated with polyembryony in \textit{ig1} mutants}    % Title
 
-\begin{minipage}[m]{0.08\linewidth}
+\begin{minipage}[m]{0.06\linewidth}
   \includegraphics[height=50mm]{sam-bfr-smiling-crop.jpg} % author photo
+  \hfill
 \end{minipage}
-\begin{minipage}[m]{0.50\linewidth}                      % Author(s)
+\begin{minipage}[m]{0.40\linewidth}                      % Author(s)
   \color{Black}
-  \Huge \textbf{Sam Hokin, Matt Evans, Antony Chettoor \& Vicki Tang} \\
-  \Large shokin@carnegiescience.edu
+  \Large \textbf{Sam Hokin, Matt Evans, Antony Chettoor \& Vicki Tang}
+  \large shokin@carnegiescience.edu
 \end{minipage}
 \hfill
-\begin{minipage}[m]{0.40\linewidth}                      % Author(s)
+\begin{minipage}[m]{0.50\linewidth}                      % Author(s)
   \hfill
   \includegraphics[height=50mm]{CS_plantbio_logo_horz.eps} % Carnegie DPB logo
 \end{minipage}
@@ -149,10 +152,9 @@
 
 %----------------------------------------------------------------------------------------
 
-\begin{multicols}{4} % This is how many columns your poster will be broken into, a poster with many figures may benefit from less columns whereas a text-heavy poster benefits from more
-
+\begin{multicols}{3} % This is how many columns your poster will be broken into, a poster with many figures may benefit from less columns whereas a text-heavy poster benefits from more
   \color{Black} % default color
-
+  
   %----------------------------------------------------------------------------------------
   %	ABSTRACT
   %----------------------------------------------------------------------------------------
@@ -164,88 +166,169 @@
   %	INTRODUCTION
   %----------------------------------------------------------------------------------------
 
-  {
-    \titlespacing{\section}{0pt}{0pt}{0pt} % suppress skip on very first section
-    \section*{INTRODUCTION}
-  }
+  \section*{SUMMARY}
 
-  \textbf{Stuff.}
+  The \textit{LBD6} or \textit{ASYMMETRIC LEAVES2} gene in maize is an important regulator in
+  the transition from proliferation to differentiation in embryo sac development (Evans, 2007). The mutant, also
+  known as \textit{indeterminate gametophyte1} (\textit{ig1}), produces
+  embryo sacs which \underline{lack} the ability to \underline{limit} proliferation, leading to structural defects. These
+  defects include embryo sacs with extra egg cells, extra central cells, and extra polar
+  nuclei, which give rise to abnormal seed phenotypes post-fertilization. Extra egg cells in
+  an embryo sac can be fertilized producing kernels with multiple viable embryos.
 
-  More stuff.
+  The \textit{ig1-O} mutation results in different frequencies of multiple embryos, or 'twinning,' in
+  different maize inbred backgrounds. Confocal microscopy confirms that Mo17 embryo
+  sacs carrying the \textit{ig1-O} allele have a significantly higher frequency of multiple egg cells
+  than \textit{ig1-O} embryo sacs in a B73 inbred background. The frequency of twinning is
+  intermediate in the \textit{ig1-O/+} Mo17/B73 hybrid compared to \textit{ig1-O} inbred lines. This
+  suggests that a genetic modifier(s) may be responsible for the difference in phenotypic
+  frequency between these inbred lines.
+
+  Genotyping By Sequencing (GBS) data analysis and initial SSR marker fine mapping indicate broad enhancers of twinning on
+  chromosomes 3 and 9, as well as narrow regions elsewhere.
   
-  %----------------------------------------------------------------------------------------
-  %	OBJECTIVES
-  %----------------------------------------------------------------------------------------
+  Carrying the Mo17 allele appears to be sufficient to increase the frequency of twinning caused by the \textit{ig1-O} mutation.
 
-  \section*{OBJECTIVES}
-  \color{CarnegiePriBlue}  
+  \section*{PHENOTYPES}
 
-  \begin{enumerate}
-  \item Stuff 1
-  \item Stuff 2
-  \item Stuff 3
-  \item Stuff 4
-  \end{enumerate}
+  The \textit{ig1} mutant produces many seeds with twin embryos (as well as triplets and other abnormalities), especially on a Mo17 background.
 
-  \color{Black}
+  \begin{center}
+    \begin{minipage}[t]{1.0\linewidth}
+      \includegraphics[width=0.5\figwidth]{Tang-ear-wt-end}
+      \includegraphics[width=0.5\figwidth]{Tang-ear-ig1-end}
+    \end{minipage}
+    \begin{minipage}[t]{1.0\linewidth}
+      \includegraphics[width=0.5\figwidth]{Tang-seedling-wt}
+      \includegraphics[width=0.5\figwidth]{Tang-seedling-twin}
+    \end{minipage}
+    \captionof*{figure}{
+      Twin seedlings grow from an \textit{ig1} mutant twin-embryo seed.
+    }
+  \end{center}
 
-  %----------------------------------------------------------------------------------------
-  %	MATERIALS AND METHODS
-  %----------------------------------------------------------------------------------------
+  \subsection*{Rate of occurrence}
 
-  \section*{MATERIALS AND METHODS}
+  The Mo17/B73 hybrid \textit{ig1} mutants exhibit a twinning phenotype at a frequency intermediate between the frequency of
+  twinning in individual inbred lines.
 
-  %% Could have introductory text here before subsections.
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \textit{ig1} inbred lines & \# seeds & twins \\
+      \hline
+      B73 & 1372 & 0.5\% \\
+      Mo17/B73 hybrid & 5217 & 4.2\% \\
+      Mo17 & 840 & 8.5\% \\
+      \hline
+    \end{tabular}
+  \end{center}
 
-  %------------------------------------------------
+  This suggests a model in which B73 and Mo17 differ for a single modifier with a major
+  effect on twinning (the Mo17 allele of this modifier promoting twinning in \textit{ig1} mutants).
 
-  \subsection*{Subsection}
-
-  Stuff.
-
-  \subsection*{Another subsection}
-
-  More stuff.
-
-  %----------------------------------------------------------------------------------------
-  %	RESULTS 
-  %----------------------------------------------------------------------------------------
-
-  \section*{RESULTS}
-
-  \subsection*{Subsection}
-
-  Stuff.
-
-  \subsection*{Another subsection}
-
-  More stuff.
+  \section*{GBS MAPPING POPULATION}
+  \includegraphics[width=\figwidth]{twin-study-mapping.png}
   
-  %----------------------------------------------------------------------------------------
-  %	CONCLUSIONS
-  %----------------------------------------------------------------------------------------
+  \section*{GBS RESULTS}
+
+  \subsection*{Mapping and SNP statistics}
+
+  45 sequenced samples had non-twin phenotype, 48 had twin phenotype.
+  
+  \begin{center}
+    \small
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      93 samples & mean & s.d. & max & min \\
+      \hline
+      mapped reads & 3,633,114 & 676,410 & 5,204,340 & 1,956,272 \\
+      \# SNPs & 85,118 & 16,892 & 132,620 & 54,132 \\
+      avg. depth & 8.79 & 1.06 & 11.02 & 6.04 \\
+      \# > 1x & 2.86\% & 0.24 & 3.61\% & 2.27\% \\
+      \# > 4x & 1.62\% & 0.15 & 1.96\% & 1.10\% \\
+      Het rate & 0.026\% & 0.005 & 0.039\% & 0.017\% \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  The GBS sequencing was done by Novogene. The reads were mapped against the B73v4 genome. Positions with at least four reads qualified for SNP calls.
+
+  \subsection*{Example non-segregated and segregated loci}
+
+  Example regions in which roughly half of the samples have heterozygous SNP calls.
+  
+  \begin{minipage}[t]{0.48\linewidth}
+    \includegraphics[width=0.48\figwidth]{2.64310231-64310310.png}
+    \captionof*{figure}{
+      There is no segregation of twins vs. non-twins in this region.
+      The three SNPs match the corresponding Mo17v1 best-BLAST-hit region.
+    }
+  \end{minipage}
+  \begin{minipage}[t]{0.04\linewidth}
+    \hfill
+  \end{minipage}
+  \begin{minipage}[t]{0.48\linewidth}
+    \includegraphics[width=0.48\figwidth]{8.164319174-164319253.png}
+    \captionof*{figure}{
+      Twin samples segregate significantly from non-twin samples in this region, with more twins carrying three SNPs, which don't match Mo17v1.
+    }
+  \end{minipage}
+    
+  \subsection*{Fisher's exact test}
+
+  Each SNP location on the genome provides a classic 2 X 2 contingency table, twin/non-twin vs. het/no call, appropriate for Fisher's Exact Test. Fisher's Exact Test was therefore applied to
+  every location, generating a $p$-value at every position. For example:
+
+  \begin{center}
+    \begin{tabular}{|r|c|c|c|}
+      \hline
+      \textbf{2:28422677} & reads & no call & het call \\
+      \hline
+      non-twin   & 417   & \textbf{27} & 18 \\
+      \hline
+      twin       & 773   & 7  & \textbf{41} \\
+      \hline
+      total      & 1190  & 34 & 59 \\
+      \hline
+    \end{tabular}
+    \captionof*{table}{
+      Fisher's exact test on calls at this locus gives $p=5.5\times10^{-6}$.
+      The number of called samples, 59, and the average reads per called sample, 1190/59=20.2, pass the filter used for the whole-genome Manhattan plot below.
+    }
+  \end{center}
+
+
+  \subsection*{Regions of segregation}
+
+  Fisher's exact test was applied to all calls in the GBS study for the null hypothesis that the number of Het calls does not differ between the twin and non-twin groups.
+  Loci were plotted if they had at least 4 reads per called sample and had at least 45 Het calls out of 93 samples.
+  
+  \begin{center}
+    \includegraphics[width=\figwidth]{Fisher-Het-45}
+    \captionof*{figure}{
+      The position of the LBD6 (\textit{ig1}) gene on Chr3 is indicated, as well as the locations of SSR markers that exhibit segregation between twins and non-twins.
+      Red indicates significance at $p<0.01$. Dashed lines are drawn at $p=10^{-2}$ and $10^{-6}$.
+    }
+  \end{center}
+
+
+  \section*{SSR MARKERS}
+
+  For comparison to the GBS results, SSR markers on Chr8 and Chr9 were applied to 73 DNA samples of \textit{ig1}
+  twins from different plants and progenitor wild-type inbred lines to identify the parental alleles for each locus.
+  Of the primers ordered and tested, those for \textbf{umc1984} on Chr8, and \textbf{umc1586} and \textbf{umc2337} on Chr9
+  were polymorphic between B73 and Mo17 and showed the clearest bands.
+  
+  On Chr8, \textbf{umc1984} showed a significantly higher number of heterozygous
+  samples than expected ($p<0.05$, chi-squared test), while on Chr9, both \textbf{umc1586} and \textbf{umc2337}
+  showed a significantly higher number of heterozygous samples than expected ($p<0.01$, and $p<0.05$, respectively).
+
+  More fine mapping will need to be done to narrow down the modifying regions and to identify candidate genes for
+  these enhancers and determine the differences between the B73 and Mo17 alleles.
 
   \section*{CONCLUSIONS}
-  \color{CarnegiePriBlue}
-  
-  \begin{enumerate}
-  \item Conclusion 1
-  \item Conclusion 2
-  \item Conclusion 3
-  \end{enumerate}
 
-  %----------------------------------------------------------------------------------------
-  %	FURTHER RESEARCH
-  %----------------------------------------------------------------------------------------
-
-  \section*{Further Research}
-  
-  \begin{enumerate}
-  \item Do this 1
-  \item Do this 2
-  \item Do this 3
-  \item Do this 4
-  \end{enumerate}
 
   %----------------------------------------------------------------------------------------
   %	REFERENCES
