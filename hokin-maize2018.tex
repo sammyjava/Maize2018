@@ -125,15 +125,17 @@
   \includegraphics[height=50mm]{sam-bfr-smiling-crop.jpg} % author photo
   \hfill
 \end{minipage}
-\begin{minipage}[m]{0.40\linewidth}                      % Author(s)
+\begin{minipage}[m]{0.46\linewidth}                      % author(s)
+  \raggedright
   \color{Black}
-  \Large \textbf{Sam Hokin, Matt Evans, Antony Chettoor \& Vicki Tang}
+  \Large \underline{Sam Hokin}, Matt Evans, Antony Chettoor \& Vicki Tang \\
+  \vspace{5mm} 
   \large shokin@carnegiescience.edu
 \end{minipage}
 \hfill
-\begin{minipage}[m]{0.50\linewidth}                      % Author(s)
+\begin{minipage}[m]{0.48\linewidth}                      % Carnegie DPB logo
   \hfill
-  \includegraphics[height=50mm]{CS_plantbio_logo_horz.eps} % Carnegie DPB logo
+  \includegraphics[height=50mm]{CS_plantbio_logo_horz.eps} 
 \end{minipage}
 
 \vspace{5mm} % A bit of extra whitespace between the header and poster content
@@ -189,18 +191,28 @@
   
   Carrying the Mo17 allele appears to be sufficient to increase the frequency of twinning caused by the \textit{ig1-O} mutation.
 
-  \section*{PHENOTYPES}
+  \section*{BACKGROUND}
 
-  The \textit{ig1} mutant produces many seeds with twin embryos (as well as triplets and other abnormalities), especially on a Mo17 background.
+  The \textit{indeterminate gametophyte} mutation was found in W23 inbreds and named by Kermicle (1969).
+
+  Matt Evans found (2007) that the incidence of twinning varies with background; in particular, \textit{ig1} Mo17 has a much higher incidence compared to \textit{ig1} B73 and others.
 
   \begin{center}
-    \begin{minipage}[t]{1.0\linewidth}
-      \includegraphics[width=0.5\figwidth]{Tang-ear-wt-end}
-      \includegraphics[width=0.5\figwidth]{Tang-ear-ig1-end}
+    \includegraphics[width=\figwidth]{Evans-2007-Table-1.png}
+  \end{center}
+
+  \subsection*{Phenotypes}
+
+  The \textit{ig1} mutant produces many seeds with twin embryos (as well as triplets and other abnormalities).
+
+  \begin{center}
+    \begin{minipage}[t]{0.6\linewidth}
+      \includegraphics[width=0.3\figwidth]{Tang-ear-wt-end}
+      \includegraphics[width=0.3\figwidth]{Tang-ear-ig1-end}
     \end{minipage}
-    \begin{minipage}[t]{1.0\linewidth}
-      \includegraphics[width=0.5\figwidth]{Tang-seedling-wt}
-      \includegraphics[width=0.5\figwidth]{Tang-seedling-twin}
+    \begin{minipage}[t]{0.6\linewidth}
+      \includegraphics[width=0.3\figwidth]{Tang-seedling-wt}
+      \includegraphics[width=0.3\figwidth]{Tang-seedling-twin}
     \end{minipage}
     \captionof*{figure}{
       Twin seedlings grow from an \textit{ig1} mutant twin-embryo seed.
@@ -228,6 +240,7 @@
   effect on twinning (the Mo17 allele of this modifier promoting twinning in \textit{ig1} mutants).
 
   \section*{GBS MAPPING POPULATION}
+  
   \includegraphics[width=\figwidth]{twin-study-mapping.png}
   
   \section*{GBS RESULTS}
@@ -256,13 +269,13 @@
 
   \subsection*{Example non-segregated and segregated loci}
 
-  Example regions in which roughly half of the samples have heterozygous SNP calls.
-  
+  In these regions roughly half of the samples have heterozygous SNP calls:
+
   \begin{minipage}[t]{0.48\linewidth}
     \includegraphics[width=0.48\figwidth]{2.64310231-64310310.png}
     \captionof*{figure}{
-      There is no segregation of twins vs. non-twins in this region.
-      The three SNPs match the corresponding Mo17v1 best-BLAST-hit region.
+      Twin samples (lower, green) do not segregate from non-twin samples (upper, blue) in this region.
+      The three SNPs match the corresponding Mo17v1 region.
     }
   \end{minipage}
   \begin{minipage}[t]{0.04\linewidth}
@@ -271,23 +284,26 @@
   \begin{minipage}[t]{0.48\linewidth}
     \includegraphics[width=0.48\figwidth]{8.164319174-164319253.png}
     \captionof*{figure}{
-      Twin samples segregate significantly from non-twin samples in this region, with more twins carrying three SNPs, which don't match Mo17v1.
+      Twin samples (lower, green) segregate significantly from non-twin samples (upper, blue) in this region, with more twins carrying three SNPs (which don't match Mo17v1).
     }
   \end{minipage}
-    
+
   \subsection*{Fisher's exact test}
 
-  Each SNP location on the genome provides a classic 2 X 2 contingency table, twin/non-twin vs. het/no call, appropriate for Fisher's Exact Test. Fisher's Exact Test was therefore applied to
-  every location, generating a $p$-value at every position. For example:
+  Each SNP location on the genome provides a classic 2 X 2 contingency table, appropriate for Fisher's Exact Test
+  for the null hypothesis that the number of Het calls does not differ between the twin and non-twin groups.
+  Fisher's Exact Test was applied at every location, generating a $p$-value each time. For example:
 
   \begin{center}
-    \begin{tabular}{|r|c|c|c|}
+    \begin{tabular}{|r|c||c|c|}
       \hline
       \textbf{2:28422677} & reads & no call & het call \\
+      \hline
       \hline
       non-twin   & 417   & \textbf{27} & 18 \\
       \hline
       twin       & 773   & 7  & \textbf{41} \\
+      \hline
       \hline
       total      & 1190  & 34 & 59 \\
       \hline
@@ -301,38 +317,44 @@
 
   \subsection*{Regions of segregation}
 
-  Fisher's exact test was applied to all calls in the GBS study for the null hypothesis that the number of Het calls does not differ between the twin and non-twin groups.
-  Loci were plotted if they had at least 4 reads per called sample and had at least 45 Het calls out of 93 samples.
+  $-log_{10}(p)$ from Fisher's Exact Test was plotted where there were at least 4 reads per called sample and at least 45 Het calls out of 93 samples:
   
   \begin{center}
     \includegraphics[width=\figwidth]{Fisher-Het-45}
     \captionof*{figure}{
-      The position of the LBD6 (\textit{ig1}) gene on Chr3 is indicated, as well as the locations of SSR markers that exhibit segregation between twins and non-twins.
-      Red indicates significance at $p<0.01$. Dashed lines are drawn at $p=10^{-2}$ and $10^{-6}$.
+      The position of the LBD6 (\textit{ig1}) gene on chr 3 is indicated, as well as locations of three SSR markers that exhibit increased heterozygosity in twin samples.
+      Red dots indicate significance at $p<10^{-2}$. Dashed lines are drawn at $p=10^{-2}$ and $10^{-6}$.
     }
   \end{center}
 
+  Broad regions of segregation are seen on:
+  \begin{itemize}
+  \item \textbf{3:183,000,000..210,000,000} above the LBD6 locus, this broad region contains W23 and other contributions in addition to Mo17;
+  \item \textbf{9:1..10,000,000} this region contains 223 annotated genes on B73v4, 158 with functional descriptions. The best-fit segregation peak is at 5,130,500;
+  \end{itemize}
+  as well as many narrow regions throughout the genome.
 
   \section*{SSR MARKERS}
 
-  For comparison to the GBS results, SSR markers on Chr8 and Chr9 were applied to 73 DNA samples of \textit{ig1}
+  For comparison, SSR markers on chromosomes 8 and 9 were applied to 73 DNA samples of \textit{ig1}
   twins from different plants and progenitor wild-type inbred lines to identify the parental alleles for each locus.
-  Of the primers ordered and tested, those for \textbf{umc1984} on Chr8, and \textbf{umc1586} and \textbf{umc2337} on Chr9
-  were polymorphic between B73 and Mo17 and showed the clearest bands.
-  
-  On Chr8, \textbf{umc1984} showed a significantly higher number of heterozygous
-  samples than expected ($p<0.05$, chi-squared test), while on Chr9, both \textbf{umc1586} and \textbf{umc2337}
-  showed a significantly higher number of heterozygous samples than expected ($p<0.01$, and $p<0.05$, respectively).
-
-  More fine mapping will need to be done to narrow down the modifying regions and to identify candidate genes for
-  these enhancers and determine the differences between the B73 and Mo17 alleles.
+  The primers for \textbf{umc1984} on chromosome 8, and \textbf{umc1586} and \textbf{umc2337} on chromosome 9
+  were polymorphic between B73 and Mo17 and showed the clearest bands. All three showed a significantly higher number of heterozygous samples than expected
+  ($\chi^2$ test: $p<0.05, 0.01, 0.05$, respectively).
 
   \section*{CONCLUSIONS}
+
+  \begin{itemize}
+  \item An unusual use of GBS provides clues to the location of a modifier enhancing twinning in Mo17 \textit{ig1} mutants.
+  \item The Mo17 modification is very likely to \underline{at least} have a component within 9:1..10,000,000.
+  \end{itemize}
 
 
   %----------------------------------------------------------------------------------------
   %	REFERENCES
   %----------------------------------------------------------------------------------------
+
+  \raggedright
 
   \nocite{*} % Print all references regardless of whether they were cited in the poster or not
   \bibliographystyle{plain} % Plain referencing style
@@ -342,7 +364,7 @@
   %	ACKNOWLEDGEMENTS
   %----------------------------------------------------------------------------------------
 
-  {\small This research was funded by National Science Foundation grant \#XXXXXXX.}
+  {\small\color{CarnegiePriBrown} This research was funded by NSF award \#1340050.}
   
   
 \end{multicols}
