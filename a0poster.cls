@@ -1,5 +1,5 @@
 %$Id: a0poster.cls,v 1.5 1999/04/05 14:49:56 mjf Exp $
-%% 
+%/
 %% This is file `a0poster.cls'
 %% 
 %% Copyright (C) 07.05.97 Gerlinde Kettl and Matthias Weiser
@@ -36,15 +36,6 @@
 \newcount\yscale
 
 %% SAM ADDED
-\DeclareOption{maize}{
-  \maizetrue\anullbfalse
-  \xkoord=2376 % big points (1 bp=1/72 inch)
-  \ykoord=3312 % big points (1 bp=1/72 inch)
-  \xscale=27
-  \yscale=27
-}
-
-%% SAM ADDED
 \DeclareOption{aspb}{
   \aspbtrue\anullbfalse
   \xkoord=3096 % big points (1 bp=1/72 inch)
@@ -69,13 +60,16 @@
   \xscale=23
   \yscale=23
 }
+
+%% SAM TWEAKED
 \DeclareOption{a0}{
   \anulltrue\anullbfalse
-  \xkoord=2380 % big points (1 bp=1/72 inch)
-  \ykoord=3368 % big points (1 bp=1/72 inch)
+  \xkoord=2384 % big points (1 bp=1/72 inch) was 2380
+  \ykoord=3370 % big points (1 bp=1/72 inch) was 3368
   \xscale=25
   \yscale=25
 }
+
 \DeclareOption{a1}{
   \aeinstrue\anullbfalse
   \xkoord=1684 % big points (1 bp=1/72 inch)
