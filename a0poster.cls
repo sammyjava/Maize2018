@@ -61,11 +61,10 @@
   \yscale=23
 }
 
-%% SAM TWEAKED to 33"x46" for printing convenience
 \DeclareOption{a0}{
   \anulltrue\anullbfalse
-  \xkoord=2376 % big points (1 bp=1/72 inch) was 2380
-  \ykoord=3312 % big points (1 bp=1/72 inch) was 3368
+  \xkoord=2380 % big points (1 bp=1/72 inch)
+  \ykoord=3368 % big points (1 bp=1/72 inch)
   \xscale=25
   \yscale=25
 }

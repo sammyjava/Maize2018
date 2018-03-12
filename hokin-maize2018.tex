@@ -19,15 +19,29 @@
 %----------------------------------------------------------------------------------------
 
 % maize2018 is A0 (33"x46")
-\documentclass[a0,portrait]{a0poster}
+%\documentclass[a0,portrait]{a0poster}
+
+\documentclass[a0,25pt]{sciposter}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts,multicol}
+\usepackage{graphicx,colortbl}
+\usepackage{hyperref}
+\hypersetup{pdfpagelayout=SinglePage}
+
+%% sciposter handy command to set margins
+\setmargins[29mm]
+
+\pagestyle{plain}
 
 \usepackage{fontspec}
 \usepackage[svgnames]{xcolor} % enable specifying colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
-% Carnegie uses Roboto Slab (serif) and Lato (sans serif)
+%% Carnegie uses Roboto Slab (serif) and Lato (sans serif)
 \setmainfont[Ligatures=TeX]{Lato}
 
-% Carnegie colors
+%% Carnegie colors
 \definecolor{CarnegiePriBlue}{cmyk}{1.00,0.85,0.15,0.25}  % main primary blue
 \definecolor{CarnegieSecBlue1}{cmyk}{0.68,0.48,0.00,0.00} % first secondary blue
 \definecolor{CarnegieSecBlue2}{cmyk}{0.85,0.69,0.04,0.00} % second secondary blue
@@ -38,47 +52,46 @@
 
 \definecolor{CarnegiePriBrown}{cmyk}{0.25,0.40,0.65,0.00} % main primary brown
 
-% multiple columns
+%% multiple columns
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt      % This is the amount of white space between the columns in the poster
 \columnseprule=3pt    % This is the thickness of the black line between the columns in the poster
 \def\columnseprulecolor{\color{lightgray}}
 
-% other needed packages
-\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
-\usepackage{wrapfig}  % Allows wrapping text around tables and figures
-\usepackage{graphicx} % Required for including images
-\usepackage{booktabs} % Top and bottom rules for table
+%% other needed packages
+%\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+%\usepackage{wrapfig}  % Allows wrapping text around tables and figures
+%\usepackage{graphicx} % Required for including images
+%\usepackage{booktabs} % Top and bottom rules for table
 
-% tweak figure and table captions
-\usepackage[font=small,labelfont={bf,color=CarnegiePriBlue},textfont={color=CarnegiePriBlue},margin=0pt,skip=18pt]{caption}
+%% tweak figure and table captions
+\usepackage[font=normalsize,labelfont={bf,color=CarnegiePriBlue},textfont={color=CarnegiePriBlue},margin=0pt,skip=18pt]{caption}
 
-% natbib drops numbers and we'll shrink text size; drop labels
+%% natbib drops numbers and we'll shrink text size; drop labels
 \usepackage{natbib}
 \def\bibfont{\footnotesize}
 \makeatletter
 \renewcommand\@biblabel[1]{}
 \makeatother
 
-% tweak list spacing
+%% tweak list spacing
 \usepackage{enumitem}
 \setlist[itemize]{topsep=10pt,itemsep=8pt,itemindent=48pt}
 \setlist[enumerate]{topsep=10pt,itemsep=8pt,itemindent=0pt}
 
-
-% tweak paragraphs
+%% tweak paragraphs
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{12pt}
 
-% tweak title spacing and colors
-% \titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
-% spacing: how to read {12pt plus 4pt minus 2pt}
-%          12pt is what we would like the spacing to be
-%          plus 4pt means that TeX can stretch it by at most 4pt
-%          minus 2pt means that TeX can shrink it by at most 2pt
+%% tweak title spacing and colors
+%% \titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
+%% spacing: how to read {12pt plus 4pt minus 2pt}
+%%          12pt is what we would like the spacing to be
+%%          plus 4pt means that TeX can stretch it by at most 4pt
+%%          minus 2pt means that TeX can shrink it by at most 2pt
 \usepackage{titlesec}
 
-% {left}{before}{after}
+%% {left}{before}{after}
 \titlespacing{\section}{0pt}{36pt}{12pt}
 \titlespacing{\subsection}{0pt}{12pt}{12pt}
 \titlespacing{\subsubsection}{0pt}{12pt}{12pt}
@@ -86,37 +99,37 @@
 \titleformat{\section}{\color{CarnegiePriBlue}\Large\bfseries}{\color{CarnegiePriBlue}\thesection}{1em}{}
 \titleformat{\subsection}{\color{CarnegiePriBrown}\large\bfseries}{\color{CarnegiePriBrown}\thesubsection}{1em}{}
 
-% tweak equation whitespace
-%% \abovedisplayskip=12pt plus 3pt minus 9pt
-%% \abovedisplayshortskip=0pt plus 3pt
-%% \belowdisplayskip=12pt plus 3pt minus 9pt
-%% \belowdisplayshortskip=7pt plus 3pt minus 4pt
+%% tweak equation whitespace
+% \abovedisplayskip=12pt plus 3pt minus 9pt
+% \abovedisplayshortskip=0pt plus 3pt
+% \belowdisplayskip=12pt plus 3pt minus 9pt
+% \belowdisplayshortskip=7pt plus 3pt minus 4pt
 
-% width of figures for consistency; set for a0 three-column
+%% width of figures for consistency; set for a0 three-column
 \newlength{\figwidth}
 \setlength{\figwidth}{233mm}
 
-% space above figures
+%% space above figures
 \newlength{\figtopspace}
 \setlength{\figtopspace}{10pt}
 
 \graphicspath{{figures/}} % Location of the graphics files
 
-%% % DEBUG: overlay a grid to view spacing
-%\usepackage[grid,gridcolor=red!20,subgridcolor=green!20,gridunit=in]{eso-pic}
+%% DEBUG: overlay a grid to view spacing
+% \usepackage[texcoord=true,grid,gridcolor=red!20,subgridcolor=green!20,gridunit=mm]{eso-pic}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	POSTER HEADER 
-%----------------------------------------------------------------------------------------
+%%----------------------------------------------------------------------------------------
+%%	POSTER HEADER 
+%%----------------------------------------------------------------------------------------
 
-% The header is divided into three boxes:
-% The first is 55% wide and houses the title, subtitle, names and university/organization
-% The second is 25% wide and houses contact information
-% The third is 19% wide and houses a logo for your university/organization or a photo of you
-% The widths of these boxes can be easily edited to accommodate your content as you see fit
-% Note: no line breaks between minipage environments!
+%% The header is divided into three boxes:
+%% The first is 55% wide and houses the title, subtitle, names and university/organization
+%% The second is 25% wide and houses contact information
+%% The third is 19% wide and houses a logo for your university/organization or a photo of you
+%% The widths of these boxes can be easily edited to accommodate your content as you see fit
+%% Note: no line breaks between minipage environments!
 
 \textbf{\color{CarnegiePriBlue} \Huge GBS identification of genomic loci associated with polyembryony in \textit{ig1} mutants}    % Title
 
@@ -134,7 +147,7 @@
   \Large Maize Genetics 2018
 \end{minipage}
 \hfill
-\begin{minipage}[m]{0.48\linewidth}                      % Carnegie DPB logo
+\begin{minipage}[m]{0.47\linewidth}                      % Carnegie DPB logo
   \hfill
   \includegraphics[height=50mm]{CS_plantbio_logo_horz.eps} 
 \end{minipage}
@@ -157,17 +170,18 @@
 
 \begin{multicols}{3} % This is how many columns your poster will be broken into, a poster with many figures may benefit from less columns whereas a text-heavy poster benefits from more
   \color{Black} % default color
+  \large
   
-  %----------------------------------------------------------------------------------------
-  %	ABSTRACT
-  %----------------------------------------------------------------------------------------
+  %%----------------------------------------------------------------------------------------
+  %%	ABSTRACT
+  %%----------------------------------------------------------------------------------------
 
   %% \begin{abstract}
   %% \end{abstract}
 
-  %----------------------------------------------------------------------------------------
-  %	INTRODUCTION
-  %----------------------------------------------------------------------------------------
+  %%----------------------------------------------------------------------------------------
+  %%	INTRODUCTION
+  %%----------------------------------------------------------------------------------------
 
   \section*{SUMMARY}
 
@@ -272,8 +286,8 @@
 
   In these regions roughly half of the samples have heterozygous SNP calls:
 
-  \begin{minipage}[t]{0.49\linewidth}
-    \includegraphics[width=0.49\figwidth]{2.64310231-64310310.png}
+  \begin{minipage}[t]{0.48\linewidth}
+    \includegraphics[width=0.48\figwidth]{2.64310231-64310310.png}
     \captionof*{figure}{
       Twin samples (lower, green) do not segregate from non-twin samples (upper, blue) in this region.
       The three SNPs match the corresponding Mo17v1 region.
@@ -282,8 +296,8 @@
   \begin{minipage}[t]{0.02\linewidth}
     \hfill
   \end{minipage}
-  \begin{minipage}[t]{0.49\linewidth}
-    \includegraphics[width=0.49\figwidth]{8.164319174-164319253.png}
+  \begin{minipage}[t]{0.48\linewidth}
+    \includegraphics[width=0.48\figwidth]{8.164319174-164319253.png}
     \captionof*{figure}{
       Twin samples (lower, green) segregate significantly from non-twin samples (upper, blue) in this region, with more twins carrying three SNPs (which don't match Mo17v1).
     }
@@ -351,9 +365,9 @@
   \end{itemize}
 
 
-  %----------------------------------------------------------------------------------------
-  %	REFERENCES
-  %----------------------------------------------------------------------------------------
+  %%----------------------------------------------------------------------------------------
+  %%	REFERENCES
+  %%----------------------------------------------------------------------------------------
 
   \raggedright
 
@@ -361,9 +375,9 @@
   \bibliographystyle{plain} % Plain referencing style
   \bibliography{hokin-maize2018} % Use hokin-maize2018.bbl - regenerate with bibtex
 
-  %----------------------------------------------------------------------------------------
-  %	ACKNOWLEDGEMENTS
-  %----------------------------------------------------------------------------------------
+  %%----------------------------------------------------------------------------------------
+  %%	ACKNOWLEDGEMENTS
+  %%----------------------------------------------------------------------------------------
 
   {\small\color{CarnegiePriBrown} This research was funded by NSF award \#1340050.}
   
